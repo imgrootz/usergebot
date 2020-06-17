@@ -30,7 +30,7 @@ async def alive(message: Message):
 **I'm alive and running ^_^**
 • **Python version** : `{versions.__python_version__}`
 • **Pyrogram version** : `{versions.__pyro_version__}`
-• **Userge version** : `{versions.__version_}`
+• **Userge version** : `{versions.__version__}`
 • **Repository** : [UsergeRemix]({Config.UPSTREAM_REPO})
 """
     await userge.send_message(message.chat.id, output, disable_web_page_preview=True)
