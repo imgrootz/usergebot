@@ -27,23 +27,18 @@ async def alive(message: Message):
         await refresh_id()
         await sendit(LOGO_STICKER_ID, message)
     output = f"""
-**USERGE is Up and Running**
-
-       __Durable as a Serge__
-
-• **python version** : `{versions.__python_version__}`
-• **pyrogram version** : `{versions.__pyro_version__}`
-• **userge version** : `{versions.__version__}`
-• **license** : {versions.__license__}
-• **copyright** : {versions.__copyright__}
-• **repo** : [Userge]({Config.UPSTREAM_REPO})
+**I'm alive and running ^_^**
+• **Python version** : `{versions.__python_version__}`
+• **Pyrogram version** : `{versions.__pyro_version__}`
+• **Userge version** : `{versions.__version_}`
+• **Repository** : [UsergeRemix]({Config.UPSTREAM_REPO})
 """
     await userge.send_message(message.chat.id, output, disable_web_page_preview=True)
 
 
 async def refresh_id():
     global LOGO_STICKER_ID, LOGO_STICKER_REF
-    sticker = (await userge.get_messages('theUserge', 8)).sticker
+    sticker = (await userge.get_messages('starry69', 1)).sticker
     LOGO_STICKER_ID = sticker.file_id
     LOGO_STICKER_REF = sticker.file_ref
 
