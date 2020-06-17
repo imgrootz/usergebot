@@ -11,9 +11,6 @@ from pyrogram.errors.exceptions.bad_request_400 import BadRequest
 
 from userge import userge, Message, Config, versions
 
-LOGO_STICKER_ID, LOGO_STICKER_REF = None, None
-
-
 @userge.on_cmd("alive", about={'header': "This command is just for fun"})
 async def alive(message: Message):
     await message.delete()
@@ -21,7 +18,7 @@ async def alive(message: Message):
 × `I'm alive and running ^_^`
 • **Python version** : `{versions.__python_version__}`
 • **Pyrogram version** : `{versions.__pyro_version__}`
-• **Userge version** : `{versions.__version_}`
+• **Userge version** : `{versions.__version__}`
 • **Repository** : [UsergeRemix]({Config.UPSTREAM_REPO})
 """
     await userge.send_message(message.chat.id, output, disable_web_page_preview=True)
