@@ -20,58 +20,6 @@ from cowpy import cow
 from userge import userge, Message
 
 
-@userge.on_cmd(r"(?:Kek|:/)$",
-               about={'header': "Check yourself, hint: `:/`"}, name='Kek', trigger='')
-async def kek_(message: Message):
-    """kek"""
-    kek = ["/", "\\"]
-    for i in range(1, 9):
-        time.sleep(0.3)
-        await message.edit(":" + kek[i % 2])
-
-
-@userge.on_cmd(r"(?:Lol|-_-)$",
-               about={'header': "Check yourself, hint: `-_-`"}, name='Lol', trigger='')
-async def lol_(message: Message):
-    """lol"""
-    lol = "-_ "
-    for i in range(9):
-        if i % 3 == 0:
-            lol = "-_ "
-        lol = lol[:-1] + "_-"
-        await message.edit(lol, parse_mode="html")
-
-
-@userge.on_cmd(r"(?:Fun|;_;)$",
-               about={'header': "Check yourself, hint: `;_;`"}, name="Fun", trigger='')
-async def fun_(message: Message):
-    """fun"""
-    fun = ";_ "
-    for i in range(9):
-        if i % 3 == 0:
-            fun = ";_ "
-        fun = fun[:-1] + "_;"
-        await message.edit(fun, parse_mode="html")
-
-
-@userge.on_cmd("Oof$", about={'header': "Ooooof"}, trigger='')
-async def Oof_(message: Message):
-    """Oof"""
-    Oof = "Oo "
-    for _ in range(6):
-        Oof = Oof[:-1] + "of"
-        await message.edit(Oof)
-
-
-@userge.on_cmd("Hmm$", about={'header': "Hmmmmm"}, trigger='')
-async def Hmm_(message: Message):
-    """Hmm"""
-    Hmm = "Hm "
-    for _ in range(4):
-        Hmm = Hmm[:-1] + "mm"
-        await message.edit(Hmm)
-
-
 async def check_and_send(message: Message, *args, **kwargs):
     replied = message.reply_to_message
     if replied:
